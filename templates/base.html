@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento correr</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+    <div id="header"></div>
+    <h1>PAGINA PRINCIPAL DEL EVENTO</h1>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static',filename='images/logo_club.png') }}" alt="Logo Club">
+        </div>
+        <ul>
+            <li><a href=#header>Inicio</a></li>
+            <li><a href="{{ url_for('index') }}">Información extra</a></li>
+            <li><a href="{{ url_for('registration') }}">Inscripción</a></li>
+        </ul>
+    </nav>
+    </header>
+</body>
+</html>
