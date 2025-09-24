@@ -48,9 +48,16 @@ def enviar_correo():
         sender="practicotrabajo74@gmail.com",
         #recipients=[email],
         recipients=[email],
-        body="Hola {nombre} {apellido}, te has registrado exitosamente en la carrera en la modalidad {modalidad}. Tu DNI es {dni}. Enfermedades o condiciones médicas: {enfermedad}. Nos vemos en la carrera!".format(nombre=nombre, apellido=apellido, modalidad=modalidad, dni=dni, enfermedad=enfermedad)
+        body="""Hola {nombre} {apellido}! Te has registrado exitosamente en la carrera en la modalidad {modalidad}. 
+         - Tu DNI es {dni}. 
+         - Enfermedades o condiciones médicas: {enfermedad}. 
+        
+        Nos vemos en la carrera!""".format(nombre=nombre, apellido=apellido, modalidad=modalidad, dni=dni, enfermedad=enfermedad)
     )
-    mail.send(msg)
-                           
+    try:
+        mail.send(msg)
+        return redirect(url_for("index"))
+    except Exception as e:
+        return redirect(url_for("registration"))
 if __name__ == '__main__':
     app.run(debug=True)
