@@ -16,14 +16,10 @@ diccionario = {1: { "nombre": "Rally MTB 2025",
 @app.route('/')
 def index():
     return render_template('index.html', datos=diccionario)
-def ir_registro():
-    return redirect(url_for('registro'))
-def ir_index():
-    return redirect(url_for('index'))
 
 @app.route("/registro")
 def registration():
-    return render_template('registro.html')
+    return render_template('registration.html')
                            
 if __name__ == '__main__':
     app.run(debug=True)

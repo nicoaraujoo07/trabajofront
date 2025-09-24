@@ -1878,7 +1878,7 @@ section,
   padding-bottom: 20px;
 }
 
-#boton_carrera {
+#botones {
   margin-top: 40px;
   margin-bottom: 60px;
   background-color: #5cb874;
@@ -1893,7 +1893,7 @@ section,
   font-weight: 700;
   text-transform: uppercase;
 }
-#boton_carrera:hover {
+#botones:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 

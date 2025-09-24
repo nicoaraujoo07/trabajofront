@@ -1872,3 +1872,8 @@ section,
 .starter-section {
   color : black;
 }
+
+.sitename-reg {
+  padding-left: 300px;
+  text-decoration: underline;
+}
