@@ -134,16 +134,18 @@
 
      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2 id="datos">Datos</h2>
-        <p>Acá podes descargar un pdf del documento -pdf- (troleado puto)</p>
-        <h4>Auspiciantes</h4>
-          <p>Coca-cola</p>
-          <p>Kick</p>
-          <p>Netflix</p>
-          <p>RedBull</p>
-          <p>Manaos</p>
-          <p>Pampers</p>
-          <p>Lamborgini</p>
+        <h2 id="datos">Auspiciantes</h2>
+        <h3>¡Muchas gracias a nuestros sponsors!</h3>
+        <section id="publicidad" class="publicidad">
+          <img src="{{ url_for('static', filename='images/coca.jpeg', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/kick.jpeg', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/lambo.png', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/manaos.png', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/netflix.png', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/pampers.jpg', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/redbull.jpg', _external=True) }}" >
+        </section>
+        <h2>Datos</h2>
       </div>
     <!-- End Section Title -->
 
@@ -183,19 +185,20 @@
           <h4>Nuestros Links</h4>
           <ul>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#about">Acerca</a></li>
-            <li><a href="#services">Mapa</a></li>
-            <li><a href="#portfolio">Reglamento</a></li>
-            <li><a href="#team">Registro</a></li>
+            <li><a href="#acerca">Acerca</a></li>
+            <li><a href="#mapa">Mapa</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#reglamento">Reglamento</a></li>
+            <li><a href="#registro">Registro</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Nuestros desarrolladores</h4>
           <ul>
-            <li>Joaquin Leonel Orlando</li>
-            <li>Aca va martin que no se como es el nombre completo</li>
-            <li>Nicolás Ignacio Araujo</li>
+            <li>🎮 Joaquin Leonel Orlando</li>
+            <li>🕹️ Martín Alberto Villafañe</li>
+            <li>👾 Nicolás Ignacio Araujo</li>
           </ul>
         </div>
 
@@ -246,6 +249,13 @@
   <!-- Main JS File -->
   <script src="{{ url_for('static', filename='js/main.js', _external=True) }}"></script>
 
+  {% if error_flag is false %}
+  <script>
+    function mostrar_notif_buena() {
+  alert("¡Te has registrado exitosamente! Revisa tu correo electrónico para más detalles.");
+  }
+    window.onload = mostrar_notif_buena;
+  </script>
+  {% endif %}
 </body>
-
 </html>

@@ -63,8 +63,38 @@ html {
   --heading-color: #ffffff;
   --surface-color: #80c792;
 }
+/*lo de las imagenes para probar */
+.publicidad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  padding: 16px;
+}
 
-/* Smooth scroll */
+.publicidad img {
+  flex: 1 1 100px;           /* Crece, achica, base de 150px */
+  width:150px;
+  height: 150px;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.publicidad img:hover {
+  flex: 2 1 150px;           /* Al hacer hover, se agranda y empuja las otras */
+  opacity: 1;
+  filter: contrast(120%);
+  cursor: pointer;
+  height: 180px;
+  width: 180px;
+  
+}
+
+
+/* Smooth scroll */ 
 :root {
   scroll-behavior: smooth;
 }

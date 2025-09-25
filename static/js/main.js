@@ -215,9 +215,3 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
-function mostrar_notif() {
-  document.getElementsById("boton").addEventListener("click", function() {
-    alert("¡Te has registrado exitosamente! Revisa tu correo electrónico para más detalles.");
-  }
-  )}

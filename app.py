@@ -33,7 +33,8 @@ def index():
 
 @app.route("/registro", methods=["GET", "POST"])
 def registration():
-    return render_template('registration.html')
+    error_flag=request.args.get('error_flag')
+    return render_template('registration.html', error_flag=error_flag)
 
 @app.route("/enviar_correo", methods=["POST"])
 def enviar_correo():
@@ -56,8 +57,8 @@ def enviar_correo():
     )
     try:
         mail.send(msg)
-        return redirect(url_for("index"))
-    except Exception as e:
-        return redirect(url_for("registration"))
+        return redirect(url_for("index", error_flag=False))
+    except:
+        return redirect(url_for("registration",error_flag=True))
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run("localhost", port="5001",debug=True)

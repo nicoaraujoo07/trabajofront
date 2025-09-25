@@ -111,7 +111,7 @@
               <textarea cols="70" rows="10" type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese su comentario" ></textarea>
               <br>
               
-              <button id = "boton" type="submit">Enviar</button>
+              <button id = "boton" type="submit" oneclick="mostrar_notif()">Enviar</button>
               
               <p>Una vez enviado, seras redirigido a la página principal.</p>
               <!--<button>Ingresar</button>-->
@@ -198,6 +198,15 @@
   <!-- Main JS File -->
   <script src="{{ url_for('static', filename='js/main.js', _external=True) }}"></script>
 
+  
+    {% if error_flag %}
+    <script>
+      function mostrar_notif_mala() {
+        alert("Ha ocurrido un error durante el envío. Por favor, intenta de nuevo.");
+        };
+      window.onload = mostrar_notif_mala;
+    </script>
+    {% endif %}
 </body>
 
 </html>
