@@ -16,20 +16,29 @@ mail = Mail(app)
 
 diccionario = {1: { "nombre": "Rally MTB 2025",
                     "organizador": "Club Social y Deportivo Unidos por el Deporte",
-                    "descripcion": "Carrera de MTB rural en dos modalidades 30km y 80km …",
-                    "fecha": "24 de Octubre de 2025",                        "horario": "8am",
+                    "fecha": "24 de Octubre de 2025",
+                    "horario": "8am",
                     "lugar": "Tandil, Buenos Aires",
                     "tipo_carrera": "MTB rural",
-                    "modalidad_costo": {1: {"nombre": "Corta" ,"valor": "100"},
-                2: {"nombre": "Larga" ,"valor": "200"}},
+                    "modalidad_costo": {1: {"nombre": "Corta:" ,"valor": "10.000"},
+                                        2: {"nombre": "Larga:" ,"valor": "25.000"}},
                     "Auspiciantes": ["ausp1","auspN"]}
                 }
 
+lista = ["COMPROMISO SOCIAL: Organizamos actividades comunitarias, campañas solidarias y eventos abiertos para toda la comunidad.",
 
+"FORMACION INTEGRAL: Más allá del entrenamiento físico, trabajamos aspectos como el liderazgo, el trabajo en equipo y la responsabilidad.",
+
+"DIVERSIDAD DEPORTIVA: Contamos con múltiples disciplinas para todas las edades y niveles, desde iniciación hasta competición.",
+
+"INFRAESTRUCTURA ADECUADA: Disponemos de espacios seguros, cómodos y en constante mejora para ofrecer la mejor experiencia posible.",
+
+"EQUIPO HUMANO: Nuestro cuerpo técnico, profesores y voluntarios comparten una visión común basada en la empatía, la inclusión y el profesionalismo."]
     
+lista2 = ["Futbol ⚽","Voley 🏐","Natación 🤽🏻‍♂️","Golf ⛳","Gimnasia artística 🤸🏻‍♀️","Atletismo 🏃🏻‍➡️","Basquet 🏀","Otros... ⭐"]
 @app.route('/')
 def index():
-    return render_template('index.html', datos=diccionario)
+    return render_template('index.html', datos=diccionario, lista=lista, deportes=lista2)
 
 @app.route("/registro", methods=["GET", "POST"])
 def registration():
