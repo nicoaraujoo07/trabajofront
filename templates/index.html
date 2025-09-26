@@ -43,7 +43,7 @@
     <div class="topbar d-flex align-items-center accent-background">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i><a href="mailto:alberto@gmail.com" id="mail">✉️ practicotrabajo74@gmail.com</a></i>
+          <i><a href="mailto:practicotrabajo74@gmail.com" id="mail">✉️ practicotrabajo74@gmail.com</a></i>
           <i><span id = "tel">📱 +54 9 11 9999-9999</span></i>
         </div>
       </div>
@@ -62,7 +62,7 @@
           <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#acerca">Acerca</a></li>
-            <li><a href="#mapa">Mapa</a></li>
+            <li><a href="#mapa">Mapas</a></li>
             <li><a href="#datos">Datos</a></li>
             <li><a href="#reglamento">Reglamento</a></li>
             <li><a href="#registro">Quiero participar</a></li>
@@ -84,7 +84,7 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Bienvenido al Maratón de Tandil</h1>
+              <h1>Bienvenido a la {{datos[1]["tipo_carrera"]}} de Tandil</h1>
               <p class="mb-0">El evento {{ datos[1]["nombre"] }} se va a desarrollar en la ciudad de {{datos[1]["lugar"]}}, organizado por nuestro club, el día {{datos[1]["fecha"]}} a las {{ datos[1]["horario"]}}. </p>
             </div>
           </div>
@@ -94,7 +94,7 @@
         <div class="container">
           <ol>
             <li><a href="#">Inicio</a></li>
-            <li class="current">¿Donde encuentro la informacion?</li>
+            <li class="current">{{datos[1]["tipo_carrera"]}}</li>
           </ol>
         </div>
       </nav>
@@ -105,8 +105,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2 id="acerca">Acerca de nosotros</h2>
-        <h2>¿Quienes somos?</h2>
+        <h2 id="acerca">¿Quienes somos?</h2>
         <p class="acerca">El Club Social y Deportivo Unidos por el Deporte nace con un propósito claro: promover la integración, el crecimiento personal y el desarrollo físico y emocional de personas de todas las edades a través del deporte y la vida en comunidad. <br> 
           Desde nuestros inicios, hemos trabajado con pasión, compromiso y responsabilidad para ser un espacio de referencia donde el deporte no solo es competencia, sino también una herramienta de transformación social, inclusión y formación de valores. </p>
           <h2>Nuestra Misión</h2>
@@ -133,7 +132,7 @@
     <!-- Section Title -->
 
       <div class="container section-title" data-aos="fade-up">
-        <h2 id="mapa">Mapa</h2>
+        <h2 id="mapa">Mapas</h2>
         <br>
         <h2 class="titulo_carrera">Carrera Corta</h2>
           <div
@@ -187,7 +186,7 @@
         <h2 id="registro">Registro</h2>
         <h3>Si queres participar de la maratón, registrate acá:</h3><br>
           <a href='/registro'><button id = "botones">Click</button></a>
-          <h3>Una vez registrad@, debe llevar impreso el siguiente documento firmado: </h3>
+          <h3>Una vez registrad@, debe llevar impreso el siguiente deslinde firmado: </h3>
         <a href="{{ url_for('static', filename='files/deslinde.pdf', _external=True) }}" target="_blank"><button id = "botones">Descargar</button></a>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up">
@@ -276,12 +275,12 @@
   <script src="{{ url_for('static', filename='js/main.js', _external=True) }}"></script>
 
   {% if error_flag is false %}
-  <script>
-    function mostrar_notif_buena() {
-  alert("¡Te has registrado exitosamente! Revisa tu correo electrónico para más detalles.");
-  }
+    <script>
+      function mostrar_notif_buena() {
+        alert("¡Te has registrado exitosamente! Revisa tu correo electrónico para más detalles.");
+      }
     window.onload = mostrar_notif_buena;
-  </script>
+    </script>
   {% endif %}
 </body>
 </html>

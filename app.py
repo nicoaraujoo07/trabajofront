@@ -19,10 +19,11 @@ diccionario = {1: { "nombre": "Rally MTB 2025",
                     "fecha": "24 de Octubre de 2025",
                     "horario": "8am",
                     "lugar": "Tandil, Buenos Aires",
-                    "tipo_carrera": "MTB rural",
+                    "tipo_carrera": "MTB Rural",
                     "modalidad_costo": {1: {"nombre": "Corta:" ,"valor": "10.000"},
-                                        2: {"nombre": "Larga:" ,"valor": "25.000"}},
-                    "Auspiciantes": ["ausp1","auspN"]}
+                                        2: {"nombre": "Larga:" ,"valor": "25.000"}
+                                        }
+                    }
                 }
 
 lista = ["COMPROMISO SOCIAL: Organizamos actividades comunitarias, campañas solidarias y eventos abiertos para toda la comunidad.",
@@ -38,7 +39,10 @@ lista = ["COMPROMISO SOCIAL: Organizamos actividades comunitarias, campañas sol
 lista2 = ["Futbol ⚽","Voley 🏐","Natación 🤽🏻‍♂️","Golf ⛳","Gimnasia artística 🤸🏻‍♀️","Atletismo 🏃🏻‍➡️","Basquet 🏀","Otros... ⭐"]
 @app.route('/')
 def index():
-    return render_template('index.html', datos=diccionario, lista=lista, deportes=lista2)
+    ef_str = request.args.get("error_flag")
+    if ef_str == "False":
+        ef_str = False
+    return render_template('index.html', datos=diccionario, lista=lista, deportes=lista2,error_flag=ef_str)
 
 @app.route("/registro", methods=["GET", "POST"])
 def registration():
