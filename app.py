@@ -37,6 +37,7 @@ lista = ["COMPROMISO SOCIAL: Organizamos actividades comunitarias, campañas sol
 "EQUIPO HUMANO: Nuestro cuerpo técnico, profesores y voluntarios comparten una visión común basada en la empatía, la inclusión y el profesionalismo."]
     
 lista2 = ["Futbol ⚽","Voley 🏐","Natación 🤽🏻‍♂️","Golf ⛳","Gimnasia artística 🤸🏻‍♀️","Atletismo 🏃🏻‍➡️","Basquet 🏀","Otros... ⭐"]
+
 @app.route('/')
 def index():
     ef_str = request.args.get("error_flag")

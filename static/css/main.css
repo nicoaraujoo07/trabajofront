@@ -64,7 +64,7 @@ html {
   --surface-color: #80c792;
 }
 /*lo de las imagenes para probar */
-.publicidad {
+#auspiciantes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -73,7 +73,7 @@ html {
   padding: 16px;
 }
 
-.publicidad img {
+#auspiciantes img {
   flex: 1 1 100px;           /* Crece, achica, base de 150px */
   width:150px;
   height: 150px;
@@ -83,7 +83,7 @@ html {
   border-radius: 15px;
 }
 
-.publicidad img:hover {
+#auspiciantes img:hover {
   flex: 2 1 150px;           /* Al hacer hover, se agranda y empuja las otras */
   opacity: 1;
   filter: contrast(120%);
@@ -328,8 +328,8 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
   margin-right: 8px;
+  height: 65px;
 }
 
 .header .logo h1 {
@@ -463,10 +463,12 @@ h6 {
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    height: 35px;
+    width: auto;
   }
 
   .navmenu {
-    padding: 0;
+    padding-left: 10%;
     z-index: 9997;
   }
 
@@ -474,7 +476,7 @@ h6 {
     display: none;
     list-style: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
+    inset: 60px 20px 540px 20px;
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
@@ -483,6 +485,7 @@ h6 {
     transition: 0.3s;
     z-index: 9998;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    min-height: 35%;
   }
 
   .navmenu a,
@@ -789,7 +792,6 @@ h6 {
 
 .page-title .heading {
   padding: 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .page-title .heading h1 {
@@ -1899,11 +1901,6 @@ section,
   border-bottom: 15px solid white;
 }
 
-
-.heading {
-  background-image: "{{ url_for('static', 'images/') }}";
-}
-
 .titulo_carrera {
   padding-bottom: 20px;
 }
@@ -1970,4 +1967,40 @@ section,
 #frase {
   font-family: "Raleway";
   font-style: italic;
+}
+.heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: #80c792;
+  height: 735px;
+}
+.heading h1, .heading p {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+#imagen-heading {
+  position: absolute;
+  inset:0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 65%;
+}
+
+#titulo {
+  font-size: 58px;
+  text-shadow: #060606;
+}
+
+#icono {
+  position:flex;
+  justify-content: flex-start;
+  height: 65px;
 }

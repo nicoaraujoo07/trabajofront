@@ -49,16 +49,15 @@
       </div>
     </div><!-- End Top Bar -->
 
-    <div class="branding d-flex align-items-cente">
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="#" class="logo d-flex align-items-center">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">{{datos[1]["organizador"]}}</h1>
+    <div class="branding d-flex align-items-center justify-content-center">
+      <img src="{{ url_for('static', filename='images/favicon.jpg', _external=True) }}" id="icono">
+      <div class="container position-relative d-flex align-items-center justify-content-center" style="margin-left: 0;margin-right: 0;">
+        <a href="#" class="logo d-flex align-items-center" style="width: fit-content;">
+          
+          <h1 id="centered-content" class="sitename">{{datos[1]["organizador"]}}</h1>
         </a>
 
-        <nav id="navmenu" class="navmenu">
+        <nav id="centered-content" class="navmenu">
           <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#acerca">Acerca</a></li>
@@ -67,7 +66,7 @@
             <li><a href="#reglamento">Reglamento</a></li>
             <li><a href="#registro">Quiero participar</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <img src=" {{url_for('static', filename= '/images/menu.png', _external=True) }}" class="mobile-nav-toggle d-xl-none bi bi-list"></img>
         </nav>
 
       </div>
@@ -81,11 +80,13 @@
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="heading">
+        <img id="imagen-heading" src="{{ url_for('static', filename='images/carrera2.jpg', _external=True) }}" alt="">
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Bienvenido a la {{datos[1]["tipo_carrera"]}} de Tandil</h1>
-              <p class="mb-0">El evento {{ datos[1]["nombre"] }} se va a desarrollar en la ciudad de {{datos[1]["lugar"]}}, organizado por nuestro club, el día {{datos[1]["fecha"]}} a las {{ datos[1]["horario"]}}. </p>
+              <h1 id="titulo">Bienvenido a la {{datos[1]["tipo_carrera"]}} de Tandil</h1>
+              <br><br>
+              <p class="mb-0">Un evento {{ datos[1]["nombre"] }} a desarrollar en la ciudad de {{datos[1]["lugar"]}}, organizado por nuestro club. <br>¡No te lo pierdas, va a ser inolvidable! </p>
             </div>
           </div>
         </div>
@@ -156,7 +157,7 @@
         <h2 id="datos">Datos</h2>
         <h2>Nuestros Auspiciantes</h2>
         <h3>¡Muchas gracias a los sponsors!</h3>
-        <section id="publicidad" class="publicidad">
+        <div id="auspiciantes">
           <img src="{{ url_for('static', filename='images/coca.jpeg', _external=True) }}" >
           <img src="{{ url_for('static', filename='images/kick.jpeg', _external=True) }}" >
           <img src="{{ url_for('static', filename='images/lambo.png', _external=True) }}" >
@@ -164,7 +165,7 @@
           <img src="{{ url_for('static', filename='images/netflix.png', _external=True) }}" >
           <img src="{{ url_for('static', filename='images/pampers.jpg', _external=True) }}" >
           <img src="{{ url_for('static', filename='images/redbull.jpg', _external=True) }}" >
-        </section>
+        </div>
         <br><br>
         <h2>Sobre la carrera</h2>
         <p class="acerca">El evento {{datos[1]["nombre"]}} se desarrollará en la ciudad de {{ datos[1]["lugar"]}}, el {{ datos[1]["fecha"]}}, con la largada programada para las {{ datos[1]["horario"] }}. La organización está a cargo del {{ datos[1]["organizador"]}}. <br>
