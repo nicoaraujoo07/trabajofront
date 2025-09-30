@@ -113,19 +113,30 @@
           <p class="acerca">Fomentar la práctica deportiva y la participación activa de niños, jóvenes, adultos y familias, ofreciendo un entorno sano, seguro y educativo que potencie el desarrollo integral de cada uno de nuestros miembros. 
             <br>Buscamos ser un motor de cambio positivo en la comunidad, fortaleciendo la convivencia, la solidaridad y el respeto.</p>
           <h2>¿Qué nos diferencia?</h2>
-          <p class="acerca">
+          <div class="acerca">
             <ul>
               {% for elemento in lista %}
-                <li class="listado"> {{ elemento }}</li>
+                {% set titulo = elemento.split(':')[0] %}
+                {% set descripcion = elemento.split(':')[1] %}
+                <li class="listado">
+                  <span class="titulo">{{ titulo }}:</span>
+                  <span class="descripcion">{{ descripcion.strip() }}</span>
+                </li>
               {% endfor %}
             </ul>
-          </p>
+          </div>
+
           <h2>Actividades y deportes</h2>
-          <ul id="deportes">
+          <div id="contenedor_deportes">
               {% for elemento in deportes %}
-                <li class="listado"> {{ elemento }}</li>
+              <div class ="deporte-item {% if loop.index is even %}invertido{% else %}normal{% endif %} {{ elemento[0][:3] }}">
+                  <img class = "imagen_deporte" src="{{ url_for('static', filename='images/'+elemento[1], _external=True)}}" alt="">
+              <h3 class="listado"> {{ elemento[0] }}</h3>
+              
+              </div>
+              <h2></h2>
               {% endfor %}
-            </ul>
+            </div>
           <p class="acerca"></p>
           <h1 id="frase">"Un club, una familia" <br> <h4>Leonel Messi, Director del Club</h4></h1>
       </div><!-- End Section Title -->
@@ -157,7 +168,7 @@
           </div>
           <div>
           <h4 class = "tistu-abajo">Los puntos "PRETAN ARGENTINA SA" , "Pico Deportes" , "UNICEN -  Campus Universitario" , "Country Sierras Del Tandil" , "Br Bl I - Tandil". <br>
-          Son puntos de control obligatorios y sirven para poder reabastecerse de agua</h4>
+          son puntos de control obligatorios y sirven para poder reabastecerse de agua</h4>
           </div>
         </div>
 
@@ -179,15 +190,26 @@
         </div>
         <br><br>
         <h2>Sobre la carrera</h2>
-        <p class="acerca">El evento {{datos[1]["nombre"]}} se desarrollará en la ciudad de {{ datos[1]["lugar"]}}, el {{ datos[1]["fecha"]}}, con la largada programada para las {{ datos[1]["horario"] }}. La organización está a cargo del {{ datos[1]["organizador"]}}. <br>
-            El desafío de tipo {{datos[1]["tipo_carrera"]}} presenta dos modalidades de carrera: <br> <ul id="deportes"><li class="listado">{{ datos[1]["modalidad_costo"][1]["nombre"] }} con un costo de ${{ datos[1]["modalidad_costo"][1]["valor"] }}</li> <li class="listado">{{ datos[1]["modalidad_costo"][2]["nombre"] }} con un costo de ${{ datos[1]["modalidad_costo"][2]["valor"] }} </li></ul></p><p class="acerca">Siendo la primera de 30 km y la segunda de 80km. 
-            <br> La distancia más corta está diseñada para aquellos que buscan un reto significativo sin la exigencia extrema de una ultra maratón, mientras que la distancia larga ofrece un recorrido exigente para los atletas más experimentados. <br>
-            El evento tiene como objetivo proporcionar una experiencia deportiva memorable en un entorno natural y desafiante. Se espera una jornada de superación personal y un fuerte espíritu de comunidad entre todos los participantes.</p>
+        <p class="acerca evento-info" id="evento-principal">
+          El evento {{datos[1]["nombre"]}} se desarrollará en la ciudad de {{ datos[1]["lugar"]}}, el {{ datos[1]["fecha"]}}, con la largada programada para las {{ datos[1]["horario"] }}. 
+          La organización está a cargo del {{ datos[1]["organizador"]}}. <br>
+          El desafío de tipo {{datos[1]["tipo_carrera"]}} presenta dos modalidades de carrera: <br> 
+          <ul id="deportes" class="lista-modalidades">
+            <li class="listado modalidad-item">{{ datos[1]["modalidad_costo"][1]["nombre"] }} con un costo de ${{ datos[1]["modalidad_costo"][1]["valor"] }}</li> 
+            <li class="listado modalidad-item">{{ datos[1]["modalidad_costo"][2]["nombre"] }} con un costo de ${{ datos[1]["modalidad_costo"][2]["valor"] }}</li>
+          </ul>
+        </p>
+
+        <p class="acerca descripcion-carrera" id="detalles-carrera">
+          Siendo la primera de 30 km y la segunda de 80km. <br> 
+          La distancia más corta está diseñada para aquellos que buscan un reto significativo sin la exigencia extrema de una ultra maratón, mientras que la distancia larga ofrece un recorrido exigente para los atletas más experimentados. <br>
+          El evento tiene como objetivo proporcionar una experiencia deportiva memorable en un entorno natural y desafiante. Se espera una jornada de superación personal y un fuerte espíritu de comunidad entre todos los participantes.
+        </p>
       </div>
     <!-- End Section Title -->
 
     <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title" data-aos="fade-up" style="padding-bottom:0;">
         <h2 id="reglamento">Reglamento</h2>
         <a href="{{ url_for('static', filename='files/reglamento.pdf', _external=True) }}" target="_blank"><button id = "botones">Descargar</button></a>
       </div>
