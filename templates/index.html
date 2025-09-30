@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>C.S.U.D.U.D - Landing Page</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='images/favicon.jpg', _external=True) }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/favicon.jpg', _external=True) }}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css', _external=True) }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css', _external=True) }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox', _external=True) }} rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css', _external=True) }}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css', _external=True) }}"> 
+
+  <!-- =======================================================
+  * Template Name: Green
+  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center accent-background">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i><a href="mailto:practicotrabajo74@gmail.com" id="mail">✉️ practicotrabajo74@gmail.com</a></i>
+          <i><span id = "tel">📱 +54 9 11 9999-9999</span></i>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center justify-content-center">
+      <img src="{{ url_for('static', filename='images/favicon.jpg', _external=True) }}" id="icono">
+      <div class="container position-relative d-flex align-items-center justify-content-center" style="margin-left: 0;margin-right: 0;">
+        <a href="#" class="logo d-flex align-items-center" style="width: fit-content;">
+          
+          <h1 id="centered-content" class="sitename">{{datos[1]["organizador"]}}</h1>
+        </a>
+
+        <nav id="centered-content" class="navmenu">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#acerca">Acerca</a></li>
+            <li><a href="#mapa">Mapas</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#reglamento">Reglamento</a></li>
+            <li><a href="#registro">Quiero participar</a></li>
+          </ul>
+          <img src=" {{url_for('static', filename= '/images/menu.png', _external=True) }}" class="mobile-nav-toggle d-xl-none bi bi-list"></img>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <img id="imagen-heading" src="{{ url_for('static', filename='images/carrera2.jpg', _external=True) }}" alt="">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 id="titulo">Bienvenido a la {{datos[1]["tipo_carrera"]}} de Tandil</h1>
+              <br><br>
+              <p class="mb-0">Un evento {{ datos[1]["nombre"] }} a desarrollar en la ciudad de {{datos[1]["lugar"]}}, organizado por nuestro club. <br>¡No te lo pierdas, va a ser inolvidable! </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="#">Inicio</a></li>
+            <li class="current">{{datos[1]["tipo_carrera"]}}</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!---->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 id="acerca">¿Quienes somos?</h2>
+        <p class="acerca">El Club Social y Deportivo Unidos por el Deporte nace con un propósito claro: promover la integración, el crecimiento personal y el desarrollo físico y emocional de personas de todas las edades a través del deporte y la vida en comunidad. <br> 
+          Desde nuestros inicios, hemos trabajado con pasión, compromiso y responsabilidad para ser un espacio de referencia donde el deporte no solo es competencia, sino también una herramienta de transformación social, inclusión y formación de valores. </p>
+          <h2>Nuestra Misión</h2>
+          <p class="acerca">Fomentar la práctica deportiva y la participación activa de niños, jóvenes, adultos y familias, ofreciendo un entorno sano, seguro y educativo que potencie el desarrollo integral de cada uno de nuestros miembros. 
+            <br>Buscamos ser un motor de cambio positivo en la comunidad, fortaleciendo la convivencia, la solidaridad y el respeto.</p>
+          <h2>¿Qué nos diferencia?</h2>
+          <p class="acerca">
+            <ul>
+              {% for elemento in lista %}
+                <li class="listado"> {{ elemento }}</li>
+              {% endfor %}
+            </ul>
+          </p>
+          <h2>Actividades y deportes</h2>
+          <ul id="deportes">
+              {% for elemento in deportes %}
+                <li class="listado"> {{ elemento }}</li>
+              {% endfor %}
+            </ul>
+          <p class="acerca"></p>
+          <h1 id="frase">"Un club, una familia" <br> <h4>Leonel Messi, Director del Club</h4></h1>
+      </div><!-- End Section Title -->
+
+    <!-- Section Title -->
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2 id="mapa">Mapas</h2>
+        <br>
+        <h2 class="titulo_carrera">Carrera corta</h2>
+          <div
+          class="mapa"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m44!1m12!1m3!1d50783.49711386516!2d-59.22453189632882!3d-37.295878729052404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m29!3e2!4m5!1s0x9591206dedf0e54d%3A0xbe0551d2cb84d97c!2sSans%20Souci!3m2!1d-37.2836808!2d-59.116405!4m5!1s0x95911fc0530a450f%3A0x217e9f2f9c3657f0!2sVivero%20El%20Cerrito!3m2!1d-37.2943317!2d-59.1382457!4m5!1s0x9591203901283ab5%3A0x90fad1691c61fe90!2sCLAAS%20Argentina%20S.A!3m2!1d-37.289946!2d-59.174206999999996!4m3!3m2!1d-37.2916027!2d-59.225435999999995!4m5!1s0x95912302a29feb03%3A0x8e63c831ddb62383!2sCerro%20De%20La%20Virgen%2C%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-37.306635899999996!2d-59.2521473!5e0!3m2!1ses!2sar!4v1759184982121!5m2!1ses!2sar"></iframe>
+          </div>
+          <div>
+            <a href="https://maps.app.goo.gl/N6qmGJvyibe6QSML9" target="_blank"><button id="botones">MAPA CARRERA CORTA</button></a></iframe>
+          </div>
+          <div>
+            <h6 class = "tistu">Los puntos "vivero el cerrito" , "CLAAS Argentina S.A." , "el desvio de la ruta 226 (marcado en mapa)"</h6>
+            <h6 class = "tistu"> son puntos de control obligatorios y sirven para poder reabastecerse de agua</h6>
+            
+          </div>
+        <h2 class="titulo_carrera">Carrera larga</h2>
+          <div
+            class="mapa"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="10" src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d203108.37244040245!2d-59.33204102222798!3d-37.305363582330294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e2!4m5!1s0x95912330589015ab%3A0x35e00ea462f3104c!2sharas%20san%20pablo!3m2!1d-37.279333!2d-59.2511441!4m5!1s0x9591210fb26be42b%3A0xf5ee56d89cae478d!2sPRETAN%20ARGENTINA%20SA!3m2!1d-37.2889962!2d-59.1789067!4m5!1s0x959121428cec4c45%3A0x2f38861ff0a24f2f!2sPico%20Deportes!3m2!1d-37.3008332!2d-59.128557199999996!4m5!1s0x9590e0389a213c5d%3A0xcff9aea03c955932!2sUNICEN%20-%20%20Campus%20Universitario!3m2!1d-37.322357499999995!2d-59.082316399999996!4m5!1s0x9590e0284d5639cf%3A0x8a9e9f9ff0575d6d!2sCountry%20Sierras%20Del%20Tandil!3m2!1d-37.3342734!2d-59.102007!4m5!1s0x959121cc770f64ab%3A0xb345a0e863b55406!2sBr%20Bl%20I%20-%20Tandil!3m2!1d-37.3046255!2d-59.155490699999994!4m5!1s0x95912302a29feb03%3A0x8e63c831ddb62383!2sCerro%20De%20La%20Virgen!3m2!1d-37.306635899999996!2d-59.2521473!5e0!3m2!1ses!2sar!4v1759187191619!5m2!1ses!2sar"></iframe>
+          </div>
+          <div>
+          <a href="https://maps.app.goo.gl/VUnopuVqCeoh4wNq5" target="_blank"><button id="boton_carrera_corta">MAPA CARRERA LARGA</button></a></iframe>
+          </div>
+          <div>
+          <h6 class = "tistu">Los puntos "PRETAN ARGENTINA SA" , "Pico Deportes" , "UNICEN -  Campus Universitario" , "Country Sierras Del Tandil" , "Br Bl I - Tandil" </h6>
+          
+          <h6 class = "tistu"> son puntos de control obligatorios y sirven para poder reabastecerse de agua</h6> 
+          </div>
+        </div>
+
+    <!-- End Section Title -->
+
+     <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 id="datos">Datos</h2>
+        <h2>Nuestros Auspiciantes</h2>
+        <h3>¡Muchas gracias a los sponsors!</h3>
+        <div id="auspiciantes">
+          <img src="{{ url_for('static', filename='images/coca.jpeg', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/kick.jpeg', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/lambo.png', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/manaos.png', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/netflix.png', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/pampers.jpg', _external=True) }}" >
+          <img src="{{ url_for('static', filename='images/redbull.jpg', _external=True) }}" >
+        </div>
+        <br><br>
+        <h2>Sobre la carrera</h2>
+        <p class="acerca">El evento {{datos[1]["nombre"]}} se desarrollará en la ciudad de {{ datos[1]["lugar"]}}, el {{ datos[1]["fecha"]}}, con la largada programada para las {{ datos[1]["horario"] }}. La organización está a cargo del {{ datos[1]["organizador"]}}. <br>
+            El desafío de tipo {{datos[1]["tipo_carrera"]}} presenta dos modalidades de carrera: <br> <ul id="deportes"><li class="listado">{{ datos[1]["modalidad_costo"][1]["nombre"] }} con un costo de ${{ datos[1]["modalidad_costo"][1]["valor"] }}</li> <li class="listado">{{ datos[1]["modalidad_costo"][2]["nombre"] }} con un costo de ${{ datos[1]["modalidad_costo"][2]["valor"] }} </li></ul></p><p class="acerca">Siendo la primera de 30 km y la segunda de 80km. 
+            <br> La distancia más corta está diseñada para aquellos que buscan un reto significativo sin la exigencia extrema de una ultra maratón, mientras que la distancia larga ofrece un recorrido exigente para los atletas más experimentados. <br>
+            El evento tiene como objetivo proporcionar una experiencia deportiva memorable en un entorno natural y desafiante. Se espera una jornada de superación personal y un fuerte espíritu de comunidad entre todos los participantes.</p>
+      </div>
+    <!-- End Section Title -->
+
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 id="reglamento">Reglamento</h2>
+        <a href="{{ url_for('static', filename='files/reglamento.pdf', _external=True) }}" target="_blank"><button id = "botones">Descargar</button></a>
+      </div>
+    <!-- End Section Title -->
+
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 id="registro">Registro</h2>
+        <h3>Si queres participar de la maratón, registrate acá:</h3><br>
+          <a href='/registro'><button id = "botones">Click</button></a>
+          <h3>Una vez registrad@, debe llevar impreso el siguiente deslinde firmado: </h3>
+        <a href="{{ url_for('static', filename='files/deslinde.pdf', _external=True) }}" target="_blank"><button id = "botones">Descargar</button></a>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up">
+        <p>Soy Paco el parrafo, soy solo un parrafo y no tiene nada de malo serlo</p>
+      </div>
+
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="#" class="logo d-flex align-items-center">
+            <span class="sitename">Club Social y Deportivo Unidos por el Deporte</span>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nuestros Links</h4>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#acerca">Acerca</a></li>
+            <li><a href="#mapa">Mapa</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#reglamento">Reglamento</a></li>
+            <li><a href="#registro">Registro</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nuestros desarrolladores</h4>
+          <ul>
+            <li>🎮 Joaquin Leonel Orlando</li>
+            <li>🕹️ Martín Alberto Villafañe</li>
+            <li>👾 Nicolás Ignacio Araujo</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contactanos</h4>
+          <p>📍 Av. Paseo Colon 850, Buenos Aires, Argentina</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>📱 +54 9 11-9999-9999</span></p>
+          <br>
+          <p><strong>Email:</strong> <span>✉️ practicotrabajo74@gmail.com</span></p>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CSDUD</strong> <span>Todos los derechos reservados.</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="flecha_arriba"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js', _external=True) }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js', _external=True) }}"></script>
+
+  {% if error_flag is false %}
+    <script>
+      function mostrar_notif_buena() {
+        alert("¡Te has registrado exitosamente! Revisa tu correo electrónico para más detalles.");
+      }
+    window.onload = mostrar_notif_buena;
+    </script>
+  {% endif %}
+</body>
+</html>

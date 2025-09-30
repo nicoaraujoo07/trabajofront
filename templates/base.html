@@ -12,11 +12,10 @@
     <h1>PAGINA PRINCIPAL DEL EVENTO</h1>
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ url_for('static',filename='images/Sin_título.jpg')}}">
+            <img src="{{ url_for('static',filename='images/logo_club.png') }}" alt="Logo Club">
         </div>
         <ul>
             <li><a href=#header>Inicio</a></li>
-            
             <li><a href="{{ url_for('index') }}">Información extra</a></li>
             <li><a href="{{ url_for('registration') }}">Inscripción</a></li>
         </ul>

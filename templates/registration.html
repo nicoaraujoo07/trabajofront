@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Registración</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='images/favicon.jpg', _external=True) }}" rel="icon">
+  <link href="{{ url_for('static', filename='images/favicon.jpg', _external=True) }}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css', _external=True) }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css', _external=True) }}static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox', _external=True) }} rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css', _external=True) }}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css', _external=True) }}"> ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
+  <link rel="stylesheet" href="../static/css/registracion.css">
+
+  <!-- =======================================================
+  * Template Name: Green
+  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center accent-background">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i><a href="mailto:alberto@gmail.com" id="mail">✉️ alberto@gmail.com</a></i>
+          <i><span id = "tel">📱 +54 911 9999-9999</span></i>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+        <div class="container position-relative d-flex align-items-center justify-content-evenly">
+        <a href="#" class="logo d-flex align-items-center">
+          <img src="{{ url_for('static', filename='images/favicon.jpg', _external=True) }}" id="icono">
+          <h1 class="sitename">Club Social y Deportivo Unidos por el Deporte</h1><h1 class = "sitename-reg">Registración</h1>
+        </a>
+        </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <img id = "main-img" src=" {{ url_for('static', filename='images/background3.jpg', _external=True) }}">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+            <form action="/enviar_correo" method="POST" class="margen" >  <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYUDA-->
+              <label for="nombre">Nombre: </label>
+              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre..."/>
+              <br>
+
+              <label for="apellido">Apellido: </label>
+              <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido..."/>
+              <br>
+
+              <label for="email">Email: </label>
+              <input type="email" id="email" name="email" placeholder="Escribe tu email..."/>
+              <br>
+
+              <label for="dni">DNI: </label>
+              <input type="text" id="dni" name="dni" placeholder="Escribe tu dni..."/>
+              <br>
+
+              <label for="modalidad">Modalidad: </label>
+              <select name="modalidad" id="modalidad">
+                <option value="corta">Corta (30km)</option>
+                <option value="larga">Larga (80km)</option>
+              </select>
+              <br>
+                
+              <label for="enfermedad">Si posee alguna enfermedad, detalle al respecto (caso contrario deje la casilla en blanco): </label>
+              <br>
+              <textarea cols="70" rows="10" type="text" id="enfermedad" name="enfermedad" placeholder="Ingrese su comentario" ></textarea>
+              <br>
+              
+              <button id = "boton" type="submit" oneclick="mostrar_notif()">Enviar</button>
+              
+              <p>Una vez enviado, seras redirigido a la página principal.</p>
+              <!--<button>Ingresar</button>-->
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Page Title -->
+      <div class="container" data-aos="fade-up">
+        <p>Soy Paco el parrafo, soy solo un parrafo y no tiene nada de malo serlo</p>
+      </div>
+
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="#" class="logo d-flex align-items-center">
+            <span class="sitename">Club Social y Deportivo Unidos por el Deporte</span>
+          </a>
+          <p>El evento se va a desarrollar en la ciudad de Tandil en Buenos Aires, organizado por nuestro club, el día 24 de Octubre de 2025 a las 8am. Existen dos modalidades corta y larga, la primera es de 3o km y la segunda de 80km.</p>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nuestros Links</h4>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Nuestros desarrolladores</h4>
+          <ul>
+            <li>🎮 Joaquin Leonel Orlando</li>
+            <li>🕹️ Martín Alberto Villafañe</li>
+            <li>👾 Nicolás Ignacio Araujo</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contactanos</h4>
+          <p>Av. Paseo Colon 850</p>
+          <p>Buenos Aires</p>
+          <p>Argentina</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+54 9 11-9999-9999</span></p>
+          <p><strong>Email:</strong> <span>practicotrabajo74@gmail.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CSDUD</strong> <span>Todos los derechos reservados.</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="flecha_arriba"></i></a>
+
+  <!-- Preloader -->
+  <!--<div id="preloader"></div> ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA--> 
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js', _external=True) }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js', _external=True) }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js', _external=True) }}"></script>
+
+  
+    {% if error_flag %}
+    <script>
+      function mostrar_notif_mala() {
+        alert("Ha ocurrido un error durante el envío. Por favor, intenta de nuevo.");
+        };
+      window.onload = mostrar_notif_mala;
+    </script>
+    {% endif %}
+</body>
+
+</html>
