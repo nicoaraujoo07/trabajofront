@@ -1,19 +1,6 @@
-from flask import Flask, redirect, url_for, render_template, request, flash
-from flask_mail import Mail, Message
+from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__)
-
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_DEFAULT_SENDER'] = 'practicotrabajo74@gmail.com'
-app.config['MAIL_USERNAME'] = 'practicotrabajo74@gmail.com'
-app.config['MAIL_PASSWORD'] = 'vsug hlcz dpin dwvn'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-
-
-mail = Mail(app)
-
 diccionario = {1: { "nombre": "Rally MTB 2025",
                     "organizador": "Club Social y Deportivo Unidos por el Deporte",
                     "descripcion": "Carrera de MTB rural en dos modalidades 30km y 80km …",
@@ -25,32 +12,22 @@ diccionario = {1: { "nombre": "Rally MTB 2025",
                     "Auspiciantes": ["ausp1","auspN"]}
                 }
 
-
     
 @app.route('/')
+def base():
+    return render_template('base.html', datos=diccionario)
+def ir_registro():
+    return redirect(url_for('registro'))
+def ir_index():
+    return redirect(url_for('index'))
+
+@app.route('/datos')
 def index():
     return render_template('index.html', datos=diccionario)
 
-@app.route("/registro", methods=["GET", "POST"])
+@app.route("/registro")
 def registration():
-    return render_template('registration.html')
-
-@app.route("/enviar_correo", methods=["POST"])
-def enviar_correo():
-    nombre = request.form['nombre']
-    email = request.form['email']
-    apellido = request.form['apellido']
-    dni = request.form['dni']
-    enfermedad = request.form['enfermedad']
-    modalidad = request.form['modalidad']
-    msg = Message(
-        subject="Estás registrado!",
-        sender="practicotrabajo74@gmail.com",
-        #recipients=[email],
-        recipients=[email],
-        body="Hola {nombre} {apellido}, te has registrado exitosamente en la carrera en la modalidad {modalidad}. Tu DNI es {dni}. Enfermedades o condiciones médicas: {enfermedad}. Nos vemos en la carrera!".format(nombre=nombre, apellido=apellido, modalidad=modalidad, dni=dni, enfermedad=enfermedad)
-    )
-    mail.send(msg)
+    return render_template('registro.html')
                            
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port= 5001 , debug=True)
