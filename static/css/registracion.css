@@ -1977,3 +1977,8 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
+#ir-inicio {
+  color: white;
+  padding-right: 20px;
+  text-decoration: underline;
+}

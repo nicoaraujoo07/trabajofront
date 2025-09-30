@@ -25,8 +25,7 @@
   <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css', _external=True) }}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css', _external=True) }}"> ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
-  <link rel="stylesheet" href="../static/css/registracion.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/registracion.css', _external=True) }}">
 
   <!-- =======================================================
   * Template Name: Green
@@ -44,6 +43,7 @@
     <div class="topbar d-flex align-items-center accent-background">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
+          <a href="{{ url_for('index', _external=True)}}" id="ir-inicio">Ir al inicio</a>
           <i><a href="mailto:alberto@gmail.com" id="mail">✉️ alberto@gmail.com</a></i>
           <i><span id = "tel">📱 +54 911 9999-9999</span></i>
         </div>

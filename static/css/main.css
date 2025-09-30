@@ -63,7 +63,6 @@ html {
   --heading-color: #ffffff;
   --surface-color: #80c792;
 }
-
 /*lo de las imagenes para probar */
 #auspiciantes {
   display: flex;
@@ -83,43 +82,13 @@ html {
   transition: all 0.3s ease;
   border-radius: 15px;
 }
-
-
-/* Chocan los textos*/
-
-.tistu {
-  margin: 40px; 
-}
-/*lo de las imagenes para probar */
-#auspiciantes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 16px;
-  padding: 16px;
-}
-
-#auspiciantes img {
-  flex: 1 1 100px;           /* Crece, achica, base de 150px */
-  width:150px;
-  height: 150px;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-  border-radius: 15px;
-}
-
 
 #auspiciantes img:hover {
   flex: 2 1 150px;           /* Al hacer hover, se agranda y empuja las otras */
   opacity: 1;
   filter: contrast(120%);
   cursor: pointer;
-
   height: 180px;
-  height: 180px 100%;
-
   width: 180px;
   
 }
