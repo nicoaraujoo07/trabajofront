@@ -1,19 +1,6 @@
-from flask import Flask, redirect, url_for, render_template, request, flash
-from flask_mail import Mail, Message
+from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__)
-
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_DEFAULT_SENDER'] = 'practicotrabajo74@gmail.com'
-app.config['MAIL_USERNAME'] = 'practicotrabajo74@gmail.com'
-app.config['MAIL_PASSWORD'] = 'vsug hlcz dpin dwvn'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-
-
-mail = Mail(app)
-
 diccionario = {1: { "nombre": "Rally MTB 2025",
                     "organizador": "Club Social y Deportivo Unidos por el Deporte",
                     "fecha": "24 de Octubre de 2025",
@@ -26,6 +13,7 @@ diccionario = {1: { "nombre": "Rally MTB 2025",
                     }
                 }
 
+
 lista = ["COMPROMISO SOCIAL: Organizamos actividades comunitarias, campañas solidarias y eventos abiertos para toda la comunidad.",
 
 "FORMACION INTEGRAL: Más allá del entrenamiento físico, trabajamos aspectos como el liderazgo, el trabajo en equipo y la responsabilidad.",
@@ -35,17 +23,26 @@ lista = ["COMPROMISO SOCIAL: Organizamos actividades comunitarias, campañas sol
 "INFRAESTRUCTURA ADECUADA: Disponemos de espacios seguros, cómodos y en constante mejora para ofrecer la mejor experiencia posible.",
 
 "EQUIPO HUMANO: Nuestro cuerpo técnico, profesores y voluntarios comparten una visión común basada en la empatía, la inclusión y el profesionalismo."]
+
     
 lista2 = ["Futbol ⚽","Voley 🏐","Natación 🤽🏻‍♂️","Golf ⛳","Gimnasia artística 🤸🏻‍♀️","Atletismo 🏃🏻‍➡️","Basquet 🏀","Otros... ⭐"]
 
 @app.route('/')
+def base():
+    return render_template('base.html', datos=diccionario)
+def ir_registro():
+    return redirect(url_for('registro'))
+def ir_index():
+    return redirect(url_for('index'))
+
+@app.route('/datos')
 def index():
     ef_str = request.args.get("error_flag")
     if ef_str == "False":
         ef_str = False
     return render_template('index.html', datos=diccionario, lista=lista, deportes=lista2,error_flag=ef_str)
 
-@app.route("/registro", methods=["GET", "POST"])
+@app.route("/registro")
 def registration():
     error_flag=request.args.get('error_flag')
     return render_template('registration.html', error_flag=error_flag)
@@ -76,3 +73,8 @@ def enviar_correo():
         return redirect(url_for("registration",error_flag=True))
 if __name__ == '__main__':
     app.run("localhost", port="5001",debug=True)
+=======
+    return render_template('registro.html')
+                           
+if __name__ == '__main__':
+    app.run(port= 5001 , debug=True)
