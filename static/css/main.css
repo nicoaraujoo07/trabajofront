@@ -88,7 +88,7 @@ html {
   opacity: 1;
   filter: contrast(120%);
   cursor: pointer;
-  height: 180px;
+  height: 180px 100%;
   width: 180px;
   
 }
@@ -2003,4 +2003,16 @@ section,
   position:flex;
   justify-content: flex-start;
   height: 65px;
+}
+
+.tistu-arriba {
+  margin-bottom: 40px;
+}
+
+.tistu-abajo {
+  margin-top: 40px;
+}
+
+iframe {
+  border-radius: 10px;
 }
