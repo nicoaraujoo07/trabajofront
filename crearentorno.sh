@@ -5,9 +5,12 @@ read nombre
 
 if [[ "$1" == "-d" ]]; then
 	rm -r $nombre
-	echo "entorno borrado"
 	exit
 fi
+
+sudo apt install python3-pip && echo "Instalando python..."
+sudo apt install pipenv && echo "Instalando pipenv..."
+
 mkdir $nombre
 mkdir $nombre/.venv
 mkdir $nombre/static
@@ -17,8 +20,6 @@ mkdir $nombre/static/images
 cd $nombre
 touch app.py
 pipenv install flask
-touch templates/index.html
-touch static/css/main.css
 
 echo "Desea iniciar el entorno virtual?"
 echo "1. Si"
