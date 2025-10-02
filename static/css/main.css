@@ -68,30 +68,32 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 16px;
   padding: 16px;
+  overflow: visible; /* Muy importante para que el crecimiento no se recorte */
 }
 
+/* Estilo base más grande */
 #auspiciantes img {
-  flex: 1 1 100px;           /* Crece, achica, base de 150px */
-  width:150px;
-  height: 150px;
+  flex: 0 1 auto; /* Toman solo lo que necesitan */
+  width: 280px;
+  height: 180px;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: all 0.3s ease;
   border-radius: 15px;
 }
 
+/* Hover: agrandar físicamente y desplazar las demás */
 #auspiciantes img:hover {
-  flex: 2 1 150px;           /* Al hacer hover, se agranda y empuja las otras */
+  width: 330px;
   opacity: 1;
   filter: contrast(120%);
   cursor: pointer;
-  height: 180px 100%;
-  width: 180px;
-  
+  z-index: 10; /* Asegura que esté encima si se solapa */
 }
+
 
 
 /* Smooth scroll */ 
@@ -857,6 +859,7 @@ section,
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
+  margin-top:20px;
   padding-bottom: 20px;
   position: relative;
 }
@@ -2014,5 +2017,151 @@ section,
 }
 
 iframe {
-  border-radius: 10px;
+  border-radius: 20px;
+}
+
+.imagen_deporte {
+  height: 350px;
+  width: auto;
+}
+
+#contenedor_deportes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.deporte-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #9bd4a9c0;
+  border-radius: 20px;
+  box-shadow: 0 0 10px gray;
+}
+
+.deporte-item img.imagen_deporte {
+  width: auto;
+  height: 350px;
+  border-radius: 20px;
+}
+
+.deporte-item h3.listado {
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  font-size: 48px;
+  color: white;
+  font-weight: 700;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+
+/* Orden normal: imagen izquierda, texto derecha */
+.deporte-item.normal {
+  flex-direction: row;
+}
+
+/* Orden invertido: imagen derecha, texto izquierda */
+.deporte-item.invertido {
+  flex-direction: row-reverse;
+}
+
+/* Opcional: estilo responsive para pantallas chicas */
+@media (max-width: 600px) {
+  .deporte-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .deporte-item img.imagen_deporte {
+    width: 80px;
+  }
+}
+
+.acerca ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+  margin: auto;
+}
+
+.acerca .listado {
+  margin-bottom: 16px;
+  background: #f9f9f9;
+  padding: 16px 20px;
+  border-left: 5px solid #9bd4a9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.acerca .titulo {
+  display: block;
+  font-weight: bold;
+  color: #7fbd8e;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+}
+
+.acerca .descripcion {
+  display: block;
+  color: black;
+  line-height: 1.5;
+}
+
+#evento-principal {
+  background-color: #ffffff;
+  padding: 20px;
+  border-left: 5px solid #50db8a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#evento-principal br {
+  margin-bottom: 10px;
+}
+
+.lista-modalidades {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.modalidad-item {
+  background: #ecf0f1;
+  border-left: 4px solid  #50db8a;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.modalidad-item:hover {
+  background: #c6ecc1;
+  cursor: pointer;
+}
+
+/* Descripción larga */
+#detalles-carrera {
+  background-color: #ffffff;
+  padding: 20px;
+  border-left: 5px solid  #50db8a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+/* Responsive (opcional) */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  #evento-principal, #detalles-carrera {
+    padding: 15px;
+  }
 }
