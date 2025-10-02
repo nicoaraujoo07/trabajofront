@@ -20,7 +20,7 @@ mkdir $nombre/static/images
 cd $nombre
 touch app.py
 pipenv install flask
-
+pipenv install flask_mail
 echo "Desea iniciar el entorno virtual?"
 echo "1. Si"
 echo "Otro carácter: No"
