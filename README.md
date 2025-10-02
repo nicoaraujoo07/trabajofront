@@ -1,8 +1,8 @@
 # Trabajo desarrollo web
 <h3>El trabajo está realizado por: </h3>
-<h4>🎮 Joaquin Leonel Orlando<br>
-🕹️ Martín Alberto Villafañe<br>
-👾 Nicolás Ignacio Araujo<br></h4>
+<h4>🎮 Joaquin Leonel Orlando (?)<br>
+🕹️ Martín Alberto Villafañe (114769)<br>
+👾 Nicolás Ignacio Araujo (114312)<br></h4>
 
 Con el tema dentro de la pagina web sentimos que el trabajo está bien realizado y bastante bien guiado.
 No haria falta una guia más externa más que la misma informacion que muestra la pagina web. 
